@@ -12,10 +12,10 @@ provider "aws" {
 }
 
 resource "aws_ssm_document" "golden_ami_automation_doc" {
-  name          = "golden_ami_automation_doc"
-  document_type = "Automation"
+  name            = "golden_ami_automation_doc"
+  document_type   = "Automation"
   document_format = "JSON"
-  content       = <<GOLDEN_AMI_AUTO
+  content         = <<GOLDEN_AMI_AUTO
   {
     "description": "This automation document triggers Golden AMI creation workflow.",
     "schemaVersion": "0.3",
@@ -442,10 +442,10 @@ GOLDEN_AMI_AUTO
 }
 
 resource "aws_ssm_document" "copy_and_share_ami" {
-  name = "copy_and_share_ami"
-  document_type = "Automation"
+  name            = "copy_and_share_ami"
+  document_type   = "Automation"
   document_format = "JSON"
-  content = <<COPY_AND_SHARE_AMI
+  content         = <<COPY_AND_SHARE_AMI
   {
     "description":"This automation document triggers a workflow to copy and share the golden AMI with other regions/accounts",
     "schemaVersion":"0.3",
@@ -544,10 +544,10 @@ COPY_AND_SHARE_AMI
 }
 
 resource "aws_ssm_document" "decommission_ami_version" {
-  name = "decommission_ami_version"
-  document_type = "Automation"
+  name            = "decommission_ami_version"
+  document_type   = "Automation"
   document_format = "JSON"
-  content = <<DECOMMISSION_AMI_VERSION
+  content         = <<DECOMMISSION_AMI_VERSION
 {
     "description":"This automation document triggers golden AMI build decommissioning workflow",
     "schemaVersion":"0.3",
@@ -620,10 +620,10 @@ DECOMMISSION_AMI_VERSION
 }
 
 resource "aws_ssm_document" "run_continuous_inspection" {
-  name = "run_continuous_inspection"
-  document_type = "Automation"
+  name            = "run_continuous_inspection"
+  document_type   = "Automation"
   document_format = "JSON"
-  content = <<RUN_CONTINUOUS_INSPECTION
+  content         = <<RUN_CONTINUOUS_INSPECTION
 {
     "description":"This automation document is triggered as part of the continuous vulnerability assessment on all active golden AMIs.",
     "schemaVersion":"0.3",
